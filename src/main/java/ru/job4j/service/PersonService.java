@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.job4j.domain.Person;
 import ru.job4j.repository.PersonRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -26,5 +27,9 @@ public class PersonService {
 
     public void delete(int id) {
         personRepository.deleteById(id);
+    }
+
+    public List<Person> findByEmployeeID(int id) {
+        return personRepository.findAllByEmployeeID(id);
     }
 }
